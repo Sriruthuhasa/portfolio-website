@@ -3,34 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Ruthuhasa Komma | Senior Portfolio</title>
+    <title>Sri Ruthuhasa Komma | Full-Stack Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background: #020617; color: #f8fafc; font-family: sans-serif; overflow-x: hidden; }
-
-        /* Sparkling Glitter Background */
-        .sparkle-container {
+        
+        /* Layer 1: Animated Background & Glitter */
+        .bg-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
-            overflow: hidden;
+            z-index: -2; background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
         }
-        .star {
-            position: absolute; background: white; border-radius: 50%;
-            opacity: 0.5; animation: twinkle var(--duration) infinite ease-in-out;
-        }
-        @keyframes twinkle {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.5); opacity: 1; blur: 2px; }
+
+        /* Layer 2: Technical Code Stream */
+        #code-stream {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none; opacity: 0.12;
+            font-family: monospace; font-size: 11px; color: #3b82f6;
         }
 
         .glass-card { 
-            background: rgba(15, 23, 42, 0.6); 
+            background: rgba(15, 23, 42, 0.7); 
             backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
             border-radius: 24px; 
-            transition: 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .glass-card:hover { border-color: #3b82f6; transform: translateY(-5px); }
+        .glass-card:hover { border-color: #3b82f6; transform: scale(1.02); }
+
+        @keyframes fall { to { transform: translateY(110vh); } }
+        .falling-code { position: absolute; top: -100px; animation: fall var(--d) linear infinite; white-space: nowrap; }
     </style>
 </head>
 <body class="p-6 md:p-12">
+    <div class="bg-canvas" id="stars"></div>
+    <div id="code-stream"></div>
+
+    <nav class="max-w-6xl mx-auto flex justify-between items-center mb-16 relative z-10">
+        <div class="text-2xl font-black tracking-tighter text-blue-500">SRK.DEV</div>
+        <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">+1-(469) 876-6875</div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto space-y-6 relative z-10">
+        <header class="mb-20">
+            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4">Sri <span class="text-blue-500">Ruthuhasa</span></h1>
+            <p class="text-xl text-slate-400 max-w-2xl">
+                Lewis University MSCS • <span class="text-white font-bold">GPA: 3.7</span>. 
+                Full-Stack Architect specializing in <span class="text-white">AWS DevOps</span> and <span class="text-white">Cybersecurity</span>.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-card p-10 md:col-span-3 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-blue-500 font-bold uppercase text-xs mb-2">Featured Project</h2>
+                    <h3 class="text-3xl font-bold mb-4 italic">Web Facial Authentication</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Implemented high-order security through liveness detection for credential-less logins[cite: 12]. 
+                        Stack: <span class="text-white font-bold">Python, React.js, and Bootstrap</span>[cite: 13].
+                    </p>
+                </div>
+                <div class="bg-black/50 p-6 rounded-xl border border-slate-800 font-mono text-[10px]">
+                    <p class="text-blue-400"># Verify Liveness Logic</p>
+                    <p class="text-pink-500">def <span class="text-blue-400">check_identity</span>(frame):</p>
+                    <p class="pl-4">score = detect_blink_rate(frame)</p>
+                    <p class="pl-4 text-pink-500">if <span class="text-white">score > 0.95:</span></p>
+                    <p class="pl-8 text-emerald-400">return "AUTHENTICATED"</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 md:col-span-2">
+                <h4 class="text-xs font-bold text-emerald-500 uppercase mb-4">Core Experience</h4>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between font-bold">
+                            <span>Web Development Intern</span>
+                            <span class="text-slate-500 font-normal">WebzInfinity</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Boosted page performance by 30% via SEO and caching[cite: 69].</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between font-bold">
+                            <span>Process Mining Intern</span>
+                            <span class="text-slate-500 font-normal">Celonis (EduSkills)</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">Analyzed log data to identify operational bottlenecks[cite: 74].</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 text-center flex flex-col justify-center">
+                <span class="text-xs font-bold text-blue-500 uppercase mb-2">Academic Standing</span>
+                <div class="text-6xl font-black">3.7</div>
+                <p class="text-slate-500 text-[10px] mt-2 uppercase">Lewis University GPA </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Layer 1: Sparkle Glitter
+        const stars = document.getElementById('stars');
+        for (let i = 0; i < 60; i++) {
+            const s = document.createElement('div');
+            s.style.position = 'absolute';
+            s.style.width = '2px'; s.style.height = '2px';
+            s.style.background = 'white';
+            s.style.left = Math.random() * 100 + '%';
+            s.style.top = Math.random() * 100 + '%';
+            s.style.borderRadius = '50%';
+            s.style.opacity = Math.random();
+            stars.appendChild(s);
+        }
+
+        // Layer 2: Code Stream snippets [cite: 60, 63]
+        const stream = document.getElementById('code-stream');
+        const codeSnippets = [
+            "import hashlib", "aws.deploy(stack)", "auth.verify(token)", 
+            "git push origin main", "react.render()", "docker.build()", 
+            "db.query('SELECT *')", "python facial_auth.py"
+        ];
+        
+        for (let i = 0; i < 30; i++) {
+            const line = document.createElement('div');
+            line.className = 'falling-code';
+            line.innerText = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            line.style.left = Math.random() * 100 + 'vw';
+            line.style.setProperty('--d', (Math.random() * 15 + 10) + 's');
+            line.style.animationDelay = (Math.random() * 10) + 's';
+            stream.appendChild(line);
+        }
+    </script>
+</body>
+</html>
