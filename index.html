@@ -6,49 +6,77 @@
     <title>Sri Ruthuhasa Komma | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0f172a; color: #f8fafc; }
-        .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
+        .gradient-text { background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-blue-500/30">
 
-    <header class="py-20 px-6 text-center">
-        <h1 class="text-5xl md:text-6xl font-extrabold gradient-text mb-4">Sri Ruthuhasa Komma</h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto">Computer Science Graduate Student | Full-Stack Developer</p>
-        <div class="mt-6 text-blue-400 font-medium text-lg text-white">Lewis University | GPA: 3.7</div>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-800 px-6 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold gradient-text">SRK</span>
+            <div class="space-x-6 text-sm font-medium text-slate-400">
+                <a href="mailto:sriruthuhasakomma@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 text-center">
+        <h1 class="text-6xl md:text-7xl font-black mb-6 tracking-tight">
+            Sri <span class="gradient-text">Ruthuhasa</span> Komma
+        </h1>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Computer Science Graduate Student at <span class="text-blue-400">Lewis University</span> 
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <div class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900/50 text-sm">GPA: 3.65 </div>
+            <div class="px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm italic">AWS Certified </div>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 space-y-16 pb-20">
+    <main class="max-w-5xl mx-auto px-6 space-y-24 pb-32">
+        
         <section>
-            <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">Professional Impact</h2>
-            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
-                <h3 class="text-xl font-bold text-blue-400">Website Developer | WebxInfinity IT Solutions</h3>
-                <p class="text-slate-500 text-sm mb-4">2023</p>
-                <ul class="list-disc list-inside space-y-3 text-slate-300">
-                    <li>Optimized website performance and page speed by <span class="text-blue-400 font-bold">30%</span> via strategic SEO.</li>
-                    <li>Developed responsive sites using HTML5, CSS3, PHP, and JavaScript.</li>
-                    <li>Integrated complex APIs and payment gateways to automate workflows.</li>
-                </ul>
+            <h2 class="text-3xl font-bold mb-10 flex items-center gap-4">
+                Professional Experience <div class="h-px bg-slate-800 flex-grow"></div>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">2023 [cite: 23]</span>
+                    <h3 class="text-2xl font-bold mt-2">Web Development Intern [cite: 21]</h3>
+                    <p class="text-slate-500 mb-6">WebzInfinity IT Solutions [cite: 22]</p>
+                    <ul class="space-y-3 text-slate-400 text-sm">
+                        <li>• Optimized performance & speed by 30% via SEO.</li>
+                        <li>• Built responsive sites using React.js & PHP[cite: 24].</li>
+                        <li>• Tested cross-device functionality for UI/UX[cite: 26, 27].</li>
+                    </ul>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition duration-300">
+                    <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest">2022 [cite: 30]</span>
+                    <h3 class="text-2xl font-bold mt-2">Process Mining [cite: 29]</h3>
+                    <p class="text-slate-500 mb-6">EduSkills supported by Celonis [cite: 31]</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Transformed raw system log data into business intelligence using <span class="text-emerald-400">Celonis</span> to identify bottlenecks[cite: 31, 32].
+                    </p>
+                </div>
             </div>
         </section>
 
-        <section>
-            <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl text-white">
-                <h3 class="text-xl font-bold text-emerald-400">Process Mining Intern | EduSkills AICTE</h3>
-                <p class="text-slate-500 text-sm mb-4">2022</p>
-                <p class="text-slate-300 leading-relaxed">
-                    Utilized **Celonis** software to identify operational bottlenecks and transform raw system log data into actionable business intelligence.
-                </p>
+        <section class="bg-blue-600/5 p-12 rounded-[3rem] border border-blue-500/10 text-center">
+            <h2 class="text-3xl font-bold mb-8">Technical Expertise</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Python [cite: 34]</span>
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">AWS DevOps [cite: 49]</span>
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">React.js [cite: 37]</span>
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Data Analytics [cite: 48, 49]</span>
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">C/C++ [cite: 34]</span>
+                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Cybersecurity </span>
             </div>
         </section>
     </main>
 
-    <footer class="text-center py-10 border-t border-slate-800 text-slate-500 text-sm">
-        Sriruthuhasakomma@gmail.com | 408-406-4242
+    <footer class="py-12 border-t border-slate-900 text-center">
+        <p class="text-slate-500 text-sm">sriruthuhasakomma@gmail.com [cite: 4] | 408-406-4242</p>
     </footer>
 
 </body>
