@@ -5,78 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sri Ruthuhasa Komma | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
         .gradient-text { background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-bg { background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans selection:bg-blue-500/30">
+<body class="bg-slate-950 text-slate-100 font-sans hero-bg selection:bg-blue-500/30">
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-800 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold gradient-text">SRK</span>
-            <div class="space-x-6 text-sm font-medium text-slate-400">
-                <a href="mailto:sriruthuhasakomma@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+    <nav class="fixed top-0 w-full z-50 glass px-8 py-4 animate__animated animate__fadeInDown">
+        <div class="max-w-6xl mx-auto flex justify-between items-center text-sm font-bold tracking-widest uppercase">
+            <span class="gradient-text text-xl">SRK</span>
+            <div class="space-x-8 text-slate-400">
+                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
             </div>
         </div>
     </nav>
 
-    <header class="pt-32 pb-20 px-6 text-center">
-        <h1 class="text-6xl md:text-7xl font-black mb-6 tracking-tight">
+    <header class="pt-40 pb-24 px-6 text-center max-w-4xl mx-auto">
+        <h1 class="text-6xl md:text-7xl font-black mb-6 tracking-tight animate__animated animate__zoomIn">
             Sri <span class="gradient-text">Ruthuhasa</span> Komma
         </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Computer Science Graduate Student at <span class="text-blue-400">Lewis University</span> 
+        <p class="text-xl text-slate-400 leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
+            Computer Science Graduate Student at <span class="text-blue-400">Lewis University</span> | GPA: 3.65
         </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <div class="px-4 py-2 rounded-full border border-slate-700 bg-slate-900/50 text-sm">GPA: 3.65 </div>
-            <div class="px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-sm italic">AWS Certified </div>
+        <div class="mt-8 flex flex-wrap justify-center gap-3 animate__animated animate__fadeInUp animate__delay-1s">
+            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-blue-400 border-blue-500/30">AWS CERTIFIED CONSULTANT</span>
+            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-emerald-400 border-emerald-500/30">DATA ANALYTICS</span>
+            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-purple-400 border-purple-500/30">DEVOPS</span>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 space-y-24 pb-32">
+    <main class="max-w-6xl mx-auto px-6 space-y-32 pb-40">
         
-        <section>
-            <h2 class="text-3xl font-bold mb-10 flex items-center gap-4">
-                Professional Experience <div class="h-px bg-slate-800 flex-grow"></div>
-            </h2>
+        <section id="projects" class="animate__animated animate__fadeInUp">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">Key Projects <div class="h-px bg-slate-800 flex-grow"></div></h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                    <span class="text-blue-400 text-sm font-bold uppercase tracking-widest">2023 [cite: 23]</span>
-                    <h3 class="text-2xl font-bold mt-2">Web Development Intern [cite: 21]</h3>
-                    <p class="text-slate-500 mb-6">WebzInfinity IT Solutions [cite: 22]</p>
-                    <ul class="space-y-3 text-slate-400 text-sm">
-                        <li>• Optimized performance & speed by 30% via SEO.</li>
-                        <li>• Built responsive sites using React.js & PHP[cite: 24].</li>
-                        <li>• Tested cross-device functionality for UI/UX[cite: 26, 27].</li>
-                    </ul>
+                <div class="group p-8 rounded-3xl glass hover:border-blue-500/50 transition-all duration-500">
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition">Facial Authentication</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Built a Chrome Extension for secure login using Python and React.js with liveness detection.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">PYTHON</span>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">REACT</span>
+                    </div>
                 </div>
-                <div class="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition duration-300">
-                    <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest">2022 [cite: 30]</span>
-                    <h3 class="text-2xl font-bold mt-2">Process Mining [cite: 29]</h3>
-                    <p class="text-slate-500 mb-6">EduSkills supported by Celonis [cite: 31]</p>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Transformed raw system log data into business intelligence using <span class="text-emerald-400">Celonis</span> to identify bottlenecks[cite: 31, 32].
-                    </p>
+                <div class="group p-8 rounded-3xl glass hover:border-emerald-500/50 transition-all duration-500">
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition">Realtime Chat App</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Full-stack chat application utilizing Firebase SDK for authentication and Cloud Firestore storage.</p>
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">FIREBASE</span>
+                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">REACT</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-blue-600/5 p-12 rounded-[3rem] border border-blue-500/10 text-center">
-            <h2 class="text-3xl font-bold mb-8">Technical Expertise</h2>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Python [cite: 34]</span>
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">AWS DevOps [cite: 49]</span>
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">React.js [cite: 37]</span>
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Data Analytics [cite: 48, 49]</span>
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">C/C++ [cite: 34]</span>
-                <span class="bg-slate-900 px-6 py-2 rounded-xl border border-slate-700 font-semibold">Cybersecurity </span>
+        <section class="grid lg:grid-cols-3 gap-12">
+            <div class="lg:col-span-2 space-y-8">
+                <h2 class="text-3xl font-bold mb-8">Professional Impact</h2>
+                <div class="relative pl-8 border-l border-slate-800 space-y-12">
+                    <div>
+                        <div class="absolute -left-[5px] w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <h3 class="text-xl font-bold">Web Development Intern</h3>
+                        <p class="text-blue-400 text-sm font-medium">WebzInfinity | 2023</p>
+                        <p class="mt-4 text-slate-400 text-sm leading-relaxed">Optimized page performance and speed by 30% through strategic SEO and React.js development.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="skills" class="space-y-6">
+                <h2 class="text-2xl font-bold">Tech Stack</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">Python</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">AWS DevOps</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">MySQL</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">React.js</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">Node.js</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">C/C++</span>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-12 border-t border-slate-900 text-center">
-        <p class="text-slate-500 text-sm">sriruthuhasakomma@gmail.com [cite: 4] | 408-406-4242</p>
+    <footer class="py-16 border-t border-slate-900 text-center glass">
+        <p class="text-slate-500 text-xs font-bold tracking-widest uppercase">Contact</p>
+        <p class="text-slate-300 mt-2 font-medium">sriruthuhasakomma@gmail.com | 408-406-4242</p>
     </footer>
 
 </body>
