@@ -3,95 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Ruthuhasa Komma | Portfolio</title>
+    <title>Sri Ruthuhasa Komma | Senior Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
-        .gradient-text { background: linear-gradient(90deg, #60a5fa, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .floating { animation: float 6s ease-in-out infinite; }
+        .glass-nav { background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .gradient-border { position: relative; border-radius: 1rem; background: rgba(30, 41, 59, 0.5); border: 1px solid transparent; background-clip: padding-box; }
+        .gradient-border::after { content: ""; position: absolute; top: -1px; left: -1px; right: -1px; bottom: -1px; background: linear-gradient(45deg, #3b82f6, #10b981); z-index: -1; border-radius: 1rem; opacity: 0.3; }
+        .bg-mesh { background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0, transparent 50%), radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0, transparent 50%); }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans hero-bg selection:bg-blue-500/30">
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-blue-500/30 bg-mesh">
 
-    <nav class="fixed top-0 w-full z-50 glass px-8 py-4 animate__animated animate__fadeInDown">
-        <div class="max-w-6xl mx-auto flex justify-between items-center text-sm font-bold tracking-widest uppercase">
-            <span class="gradient-text text-xl">SRK</span>
-            <div class="space-x-8 text-slate-400">
-                <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+    <nav class="fixed top-0 w-full z-50 glass-nav px-6 py-4 animate__animated animate__fadeInDown">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-black">S</div>
+                <span class="font-bold tracking-tighter text-lg hidden md:block uppercase">Ruthuhasa Komma</span>
+            </div>
+            <div class="flex gap-6 text-sm font-medium text-slate-400">
+                <a href="mailto:sriruthuhasakomma@gmail.com" class="hover:text-blue-400 transition">Hire Me</a>
+                <div class="h-4 w-px bg-slate-800 self-center"></div>
+                <div class="flex gap-4">
+                    <i class="fa-brands fa-github hover:text-white transition cursor-pointer"></i>
+                    <i class="fa-brands fa-linkedin hover:text-white transition cursor-pointer"></i>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="pt-40 pb-24 px-6 text-center max-w-4xl mx-auto">
-        <h1 class="text-6xl md:text-7xl font-black mb-6 tracking-tight animate__animated animate__zoomIn">
-            Sri <span class="gradient-text">Ruthuhasa</span> Komma
-        </h1>
-        <p class="text-xl text-slate-400 leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
-            Computer Science Graduate Student at <span class="text-blue-400">Lewis University</span> | GPA: 3.65
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3 animate__animated animate__fadeInUp animate__delay-1s">
-            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-blue-400 border-blue-500/30">AWS CERTIFIED CONSULTANT</span>
-            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-emerald-400 border-emerald-500/30">DATA ANALYTICS</span>
-            <span class="px-4 py-1.5 rounded-full glass text-xs font-bold text-purple-400 border-purple-500/30">DEVOPS</span>
+    <section class="relative pt-48 pb-32 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6 animate__animated animate__fadeIn">Computer Science Graduate @ Lewis University</span>
+            <h1 class="text-7xl md:text-8xl font-black mb-8 tracking-tighter animate__animated animate__fadeInUp">
+                Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Digital Impact.</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
+                Accomplished full-stack developer with a 3.65 CGPA  and a proven track record of driving results  through strategic thinking and adaptive problem-solving[cite: 3].
+            </p>
+            <div class="mt-12 flex flex-wrap justify-center gap-6 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="flex items-center gap-3 glass-nav px-6 py-3 rounded-2xl border border-white/5">
+                    <i class="fa-solid fa-cloud text-blue-500"></i>
+                    <span class="text-sm font-semibold">AWS Cloud Consultant </span>
+                </div>
+                <div class="flex items-center gap-3 glass-nav px-6 py-3 rounded-2xl border border-white/5">
+                    <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                    <span class="text-sm font-semibold">Cybersecurity Specialist [cite: 45]</span>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main class="max-w-6xl mx-auto px-6 space-y-32 pb-40">
-        
-        <section id="projects" class="animate__animated animate__fadeInUp">
-            <h2 class="text-3xl font-bold mb-12 flex items-center gap-4">Key Projects <div class="h-px bg-slate-800 flex-grow"></div></h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group p-8 rounded-3xl glass hover:border-blue-500/50 transition-all duration-500">
-                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition">Facial Authentication</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Built a Chrome Extension for secure login using Python and React.js with liveness detection.</p>
-                    <div class="flex gap-2">
-                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">PYTHON</span>
-                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">REACT</span>
+    <main class="max-w-6xl mx-auto px-6 space-y-40 pb-40">
+
+        <section class="animate__animated animate__fadeIn">
+            <h2 class="text-4xl font-bold mb-16">Professional Footprint</h2>
+            <div class="space-y-12">
+                <div class="gradient-border p-8 group hover:scale-[1.01] transition-transform">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-blue-400">Web Development Intern | WebzInfinity [cite: 21, 22]</h3>
+                        <span class="text-slate-500 font-mono text-sm">Aug 2023 - Nov 2023 [cite: 23]</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500 mt-1"></i> Optimized website performance and page speed by 30% via SEO.</li>
+                        <li class="flex gap-3"><i class="fa-solid fa-check text-blue-500 mt-1"></i> Managed complex codebases using version control (Git)[cite: 28].</li>
+                    </ul>
+                </div>
+
+                <div class="gradient-border p-8 group hover:scale-[1.01] transition-transform border-emerald-500/10">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-emerald-400">Process Mining Specialist | Celonis [cite: 29]</h3>
+                        <span class="text-slate-500 font-mono text-sm">Mar 2022 - May 2022 [cite: 30]</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        Applied data science to discover and validate workflows, uncovering bottlenecks through deep system log analysis[cite: 31, 32].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold mb-16">Architectural Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-slate-900/40 p-1 rounded-3xl group">
+                    <div class="h-full bg-slate-950 p-8 rounded-[1.4rem] border border-white/5 group-hover:border-blue-500/30 transition-all">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-face-smile text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Facial Authentication [cite: 10]</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Web-based system with liveness detection for high-order security, integrated as a Chrome Extension[cite: 11, 12].</p>
+                        <div class="flex gap-3">
+                            <span class="text-[10px] font-bold text-blue-500">PYTHON</span>
+                            <span class="text-[10px] font-bold text-blue-500">REACT.JS [cite: 13]</span>
+                        </div>
                     </div>
                 </div>
-                <div class="group p-8 rounded-3xl glass hover:border-emerald-500/50 transition-all duration-500">
-                    <h3 class="text-2xl font-bold mb-3 group-hover:text-emerald-400 transition">Realtime Chat App</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">Full-stack chat application utilizing Firebase SDK for authentication and Cloud Firestore storage.</p>
-                    <div class="flex gap-2">
-                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">FIREBASE</span>
-                        <span class="text-[10px] font-bold px-2 py-1 bg-slate-800 rounded">REACT</span>
+
+                <div class="bg-slate-900/40 p-1 rounded-3xl group">
+                    <div class="h-full bg-slate-950 p-8 rounded-[1.4rem] border border-white/5 group-hover:border-emerald-500/30 transition-all">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-comments text-emerald-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Realtime Chat Engine [cite: 14]</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Scaled communication app using Firebase SDK for auth and Cloud Firestore for low-latency data storage[cite: 15, 16].</p>
+                        <div class="flex gap-3">
+                            <span class="text-[10px] font-bold text-emerald-500">FIREBASE</span>
+                            <span class="text-[10px] font-bold text-emerald-500">SDK </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 p-1 rounded-3xl group">
+                    <div class="h-full bg-slate-950 p-8 rounded-[1.4rem] border border-white/5 group-hover:border-blue-500/30 transition-all">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fa-solid fa-virus text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Global COVID-19 Tracker [cite: 17]</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Visualizing worldwide data using Google Maps and live API stats for real-time recovery and case tracking[cite: 19].</p>
+                        <div class="flex gap-3 text-[10px] font-bold text-blue-500">
+                            <span>JAVASCRIPT</span>
+                            <span>LIVE API [cite: 19]</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="grid lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-2 space-y-8">
-                <h2 class="text-3xl font-bold mb-8">Professional Impact</h2>
-                <div class="relative pl-8 border-l border-slate-800 space-y-12">
-                    <div>
-                        <div class="absolute -left-[5px] w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <h3 class="text-xl font-bold">Web Development Intern</h3>
-                        <p class="text-blue-400 text-sm font-medium">WebzInfinity | 2023</p>
-                        <p class="mt-4 text-slate-400 text-sm leading-relaxed">Optimized page performance and speed by 30% through strategic SEO and React.js development.</p>
+        <section class="bg-blue-600/5 py-20 -mx-6 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-2xl font-bold mb-10 text-center uppercase tracking-[0.2em] text-slate-500">Verified Certifications [cite: 42]</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70">
+                    <div class="text-center">
+                        <p class="text-sm font-bold">AWS DevOps & PM [cite: 49]</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm font-bold">Data Analytics [cite: 48]</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm font-bold">Google CyberSec [cite: 45]</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-sm font-bold">UMich Data Science [cite: 49]</p>
                     </div>
                 </div>
             </div>
-            
-            <div id="skills" class="space-y-6">
-                <h2 class="text-2xl font-bold">Tech Stack</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">Python</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">AWS DevOps</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">MySQL</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">React.js</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">Node.js</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-800 rounded text-xs font-semibold">C/C++</span>
-                </div>
-            </div>
         </section>
+
     </main>
 
-    <footer class="py-16 border-t border-slate-900 text-center glass">
-        <p class="text-slate-500 text-xs font-bold tracking-widest uppercase">Contact</p>
-        <p class="text-slate-300 mt-2 font-medium">sriruthuhasakomma@gmail.com | 408-406-4242</p>
+    <footer class="py-20 text-center border-t border-white/5">
+        <p class="text-slate-500 text-sm mb-4">Ready for the next challenge.</p>
+        <p class="text-2xl font-bold text-white">+1-(469) 876-6875 [cite: 4]</p>
+        <p class="text-slate-400 mt-2">sriruthuhasakomma@gmail.com [cite: 4]</p>
     </footer>
 
 </body>
