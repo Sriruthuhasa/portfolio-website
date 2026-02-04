@@ -8,123 +8,123 @@
     <style>
         body { background-color: #020617; color: #f8fafc; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         
+        /* Layer 1: Deep Radial Background */
         #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%); }
-        #code-stream { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.3; }
+        
+        /* Layer 2: Technical Code Stream */
+        #code-stream { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
 
         .glass-card { 
-            background: rgba(15, 23, 42, 0.7); 
-            backdrop-filter: blur(15px); 
+            background: rgba(15, 23, 42, 0.75); 
+            backdrop-filter: blur(20px); 
             border: 1px solid rgba(255, 255, 255, 0.1); 
             border-radius: 24px; 
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
-        .glass-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
 
-        /* Animation for the Code Stream */
+        /* Falling Animation Logic */
         @keyframes fall { 
-            from { transform: translateY(-20vh); opacity: 0; } 
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            to { transform: translateY(110vh); opacity: 0; } 
+            0% { transform: translateY(-100px); opacity: 0; } 
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(105vh); opacity: 0; } 
         }
+
         .falling-code { 
             position: absolute; 
             font-family: 'Courier New', monospace; 
-            font-weight: bold;
+            font-weight: 900;
             white-space: nowrap;
-            animation: fall var(--duration) linear infinite; 
-            text-shadow: 0 0 8px currentColor;
+            animation: fall var(--dur) linear infinite;
+            text-shadow: 0 0 12px currentColor; /* Key for making colors "glow" */
+            user-select: none;
         }
     </style>
 </head>
-<body class="p-8 md:p-20">
+<body class="p-6 md:p-20">
     <div id="bg-canvas"></div>
     <div id="code-stream"></div>
 
     <nav class="max-w-6xl mx-auto flex justify-between items-center mb-24 relative z-10">
         <div>
-            <h2 class="text-2xl font-black uppercase tracking-tighter">Sri Ruthuhasa <span class="text-blue-500">Komma</span></h2>
+            <h2 class="text-2xl font-black uppercase tracking-tighter text-white">Sri Ruthuhasa <span class="text-blue-500">Komma</span></h2>
             <p class="text-[10px] text-slate-500 font-mono tracking-[0.3em] uppercase">Full-Stack Engineer</p>
         </div>
-        <div class="text-[10px] font-mono text-slate-400 text-right uppercase leading-relaxed">
-            Plainfield, Illinois<br>
-            sriruthuhasakomma@gmail.com
+        <div class="text-[10px] font-mono text-slate-400 text-right uppercase">
+            Plainfield, Illinois | sriruthuhasakomma@gmail.com
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto space-y-12 relative z-10">
+    <main class="max-w-6xl mx-auto relative z-10">
         <header class="mb-20">
-            <h1 class="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-6">SRI <span class="text-blue-600">RUTHU</span>HASA</h1>
+            <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-6">SRI <span class="text-blue-600">RUTHU</span>HASA</h1>
             <p class="text-xl md:text-3xl text-slate-400 max-w-3xl leading-relaxed">
-                Computer Science Graduate Student at **Lewis University**. Full-Stack Architect specializing in **AWS DevOps** and **Cybersecurity**.
+                Computer Science Graduate Student at <span class="text-white font-bold">Lewis University</span>. Specialized in <span class="text-blue-400">AWS DevOps</span> and <span class="text-emerald-400">Cybersecurity Architecture</span>.
             </p>
         </header>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-10 text-center flex flex-col justify-center">
-                <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest mb-4">Academic Excellence</span>
-                <div class="text-7xl font-black">3.7</div>
-                <p class="text-slate-500 text-xs mt-2 uppercase">GPA</p>
+            <div class="glass-card p-10 text-center">
+                <span class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Lewis University</span>
+                <div class="text-7xl font-black text-white my-2">3.7</div>
+                <p class="text-slate-500 text-xs uppercase font-bold tracking-widest">GPA</p>
             </div>
 
             <div class="glass-card p-10 md:col-span-2">
-                <h3 class="text-emerald-500 text-[10px] font-bold uppercase tracking-widest mb-6">Experience</h3>
-                <div class="flex justify-between items-start mb-4">
-                    <h4 class="text-2xl font-bold italic">WebxInfinity IT Solutions</h4>
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-emerald-500 text-[10px] font-bold uppercase tracking-widest">Experience</h3>
                     <span class="text-xs font-mono text-slate-500 uppercase">Aug - Dec 2023</span>
                 </div>
-                <p class="text-slate-400 text-lg">
-                    Developed responsive architectures using PHP and JavaScript, achieving a **30% improvement** in page performance.
+                <h4 class="text-2xl font-bold italic mb-4 text-white">WebxInfinity IT Solutions</h4>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Developed high-performance responsive architectures using PHP and JavaScript. Achieved a <span class="text-white font-bold">30% improvement</span> in page performance.
                 </p>
             </div>
         </div>
     </main>
 
     <script>
-        const container = document.getElementById('code-stream');
-        const snippets = [
-            "import hashlib", "aws.deploy(stack)", "git push origin main", 
-            "docker.build()", "db.query('SELECT *')", "react.render()", 
-            "terraform apply", "kubectl get pods", "pip install"
-        ];
-        
-        // Vibrant professional color palette
-        const colors = ["#3b82f6", "#10b981", "#a855f7", "#f43f5e", "#fbbf24"];
-
-        function createCodeLine() {
-            const el = document.createElement('div');
-            el.className = 'falling-code';
+        (function() {
+            const container = document.getElementById('code-stream');
+            const snippets = [
+                "aws.deploy(stack)", "git push origin main", "docker.build()", 
+                "kubectl get pods", "terraform apply", "python auth.py", 
+                "npm run build", "pip install", "react.render()", "sys.encrypt()"
+            ];
             
-            // Randomize properties
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const text = snippets[Math.floor(Math.random() * snippets.length)];
-            const duration = Math.random() * 8 + 7; // 7-15 seconds
-            const delay = Math.random() * 5;
-            const left = Math.random() * 100;
-            const size = Math.random() * 6 + 10; // 10px-16px
+            const colors = ["#3b82f6", "#10b981", "#a855f7", "#f43f5e", "#fbbf24", "#06b6d4"];
 
-            el.innerText = text;
-            el.style.color = color;
-            el.style.left = left + 'vw';
-            el.style.fontSize = size + 'px';
-            el.style.setProperty('--duration', duration + 's');
-            el.style.animationDelay = delay + 's';
+            function spawnLine() {
+                const el = document.createElement('div');
+                el.className = 'falling-code';
+                
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const text = snippets[Math.floor(Math.random() * snippets.length)];
+                const duration = Math.random() * 5 + 7; 
+                const leftPos = Math.random() * 95;
+                const fontSize = Math.random() * 6 + 12;
 
-            container.appendChild(el);
+                el.innerText = text;
+                el.style.color = color;
+                el.style.left = leftPos + '%';
+                el.style.fontSize = fontSize + 'px';
+                el.style.setProperty('--dur', duration + 's');
+                el.style.opacity = "0.4"; // Balanced for visibility and style
 
-            // Clean up elements after animation ends to save memory
-            setTimeout(() => {
-                el.remove();
-            }, (duration + delay) * 1000);
-        }
+                container.appendChild(el);
 
-        // Spawn 40 initial lines
-        for(let i = 0; i < 40; i++) {
-            createCodeLine();
-        }
+                // Cleanup to prevent performance lag
+                setTimeout(() => { el.remove(); }, duration * 1000);
+            }
 
-        // Continuously spawn new lines
-        setInterval(createCodeLine, 400);
+            // Initial burst
+            for(let i = 0; i < 25; i++) {
+                setTimeout(spawnLine, Math.random() * 3000);
+            }
+
+            // Continuous stream
+            setInterval(spawnLine, 700);
+        })();
     </script>
 </body>
 </html>
