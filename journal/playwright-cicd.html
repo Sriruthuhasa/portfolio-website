@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scaling Playwright Tests Across CI/CD — Sri Ruthuhasa Komma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .journal-post { max-width: 740px; margin: 0 auto; padding: 8rem 2rem 6rem; }
+    .post-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--blue-400); font-size: 0.9rem; margin-bottom: 3rem; transition: gap 0.2s; }
+    .post-back:hover { gap: 0.8rem; }
+    .post-header { margin-bottom: 3rem; }
+    .post-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .post-meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--slate-400); margin-bottom: 1rem; letter-spacing: 0.06em; }
+    .post-title { font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--white); line-height: 1.15; margin-bottom: 1.25rem; }
+    .post-divider { height: 1px; background: rgba(30,144,255,0.12); margin: 2.5rem 0; }
+    .post-body p { margin-bottom: 1.5rem; color: var(--slate-300); font-size: 1rem; line-height: 1.85; }
+    .post-body h2 { font-size: 1.4rem; color: var(--white); margin: 2.5rem 0 1rem; }
+    .post-body h3 { font-size: 1.1rem; color: var(--blue-300); margin: 2rem 0 0.75rem; }
+    .post-body code { font-family: var(--font-mono); background: var(--navy-600); color: var(--blue-200); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.88em; }
+    .post-body pre { background: var(--navy-700); border: 1px solid rgba(30,144,255,0.15); border-radius: var(--radius-md); padding: 1.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+    .post-body pre code { background: none; padding: 0; color: var(--slate-200); font-size: 0.87rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="logo-bracket">&lt;</span>SRK<span class="logo-bracket">/&gt;</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#journal">Journal</a></li>
+        <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="journal-post">
+    <a href="../index.html#journal" class="post-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Journal
+    </a>
+
+    <header class="post-header">
+      <div class="post-tags">
+        <span class="jtag">Testing</span>
+        <span class="jtag">CI/CD</span>
+        <span class="jtag">Playwright</span>
+      </div>
+      <p class="post-meta">April 2025 · 8 min read</p>
+      <h1 class="post-title">Scaling Playwright Tests Across a CI/CD Pipeline at Axis Bank</h1>
+    </header>
+
+    <div class="post-divider"></div>
+
+    <article class="post-body">
+      <p>When I joined the Axis Bank team as a Software Test Engineer, the QA process was a combination of manual testing and a handful of brittle Selenium scripts. Deployments took hours. Regressions slipped through. We needed a proper automated testing strategy — and we needed it yesterday.</p>
+
+      <p>Here's what we built, what broke, and what we'd do differently.</p>
+
+      <h2>Why Playwright Over Selenium</h2>
+      <p>The team had historical baggage with Selenium — flaky waits, driver version mismatches, slow parallel execution. Playwright solved most of these out of the box: auto-waiting, built-in parallelism, TypeScript-first API, and an incredibly fast execution engine built on Chrome DevTools Protocol.</p>
+
+      <h2>The Architecture</h2>
+      <p>We structured our test suite into three layers:</p>
+      <p><strong>1. Unit-level component tests</strong> — fast, isolated, running on every push. <strong>2. Integration flows</strong> — user journeys across the banking portal, running on pull requests. <strong>3. Full E2E smoke suite</strong> — running only on merges to main, with a dedicated test environment.</p>
+
+      <h3>Sample test structure</h3>
+      <pre><code>// tests/auth/login.spec.ts
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/LoginPage';
+
+test.describe('Login Flow', () => {
+  test('should authenticate with valid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.goto();
+    await loginPage.login('testuser@bank.com', process.env.TEST_PASSWORD!);
+    await expect(page).toHaveURL('/dashboard');
+    await expect(page.getByTestId('welcome-banner')).toBeVisible();
+  });
+});</code></pre>
+
+      <h2>The CI/CD Integration</h2>
+      <p>We ran Playwright inside Docker containers on Azure DevOps pipelines. The biggest challenge was flakiness from network timeouts in the containerized environment. We solved it with retry logic at the pipeline level and by setting conservative timeouts in <code>playwright.config.ts</code>.</p>
+
+      <h2>Results</h2>
+      <p>After 3 months: deployment confidence went up, manual QA time dropped by ~60%, and we caught 4 production-level regressions before they hit users. The test suite now runs in under 8 minutes on pull requests — fast enough to not block anyone.</p>
+
+      <p>The lesson: start with the most-used user flows, not the edge cases. Coverage on critical paths is worth ten times more than covering rare scenarios that nobody tests manually either.</p>
+    </article>
+  </main>
+
+  <script src="../main.js"></script>
+</body>
+</html>
